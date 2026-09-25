@@ -37,8 +37,8 @@
 }
 
 
-.project-period {
-  font-size: 12px !important;
+.project-copy > p.project-period {
+  font-size: 12px;
   color: var(--muted);
   margin: -10px 0 14px;
 }
