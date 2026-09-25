@@ -90,6 +90,7 @@
         <div class="project-copy">
           <p class="eyebrow">DISTRIBUTED SYSTEMS · RELIABILITY</p>
           <h3>Atlas<span>Distributed job scheduler</span></h3>
+          <p class="project-period">Sep 2026 – Present</p>
           <p>Atlas is a distributed job scheduler I’m building in Go with PostgreSQL and Redis. I designed it to keep work moving when workers fail and to coordinate job claims across multiple scheduler instances.</p>
           <p>I tested lease-based recovery by running 1,000 tasks across 10 workers and forcibly terminating one worker. Heartbeat-based failure detection reassigned its in-flight tasks within 10 seconds, validating that unfinished work could recover without manual intervention.</p>
           <p>For delivery and failure handling, Atlas supports at-least-once task delivery, configurable retries with exponential backoff for transient errors, and dead-letter queues for tasks that cannot complete. Leader election and database locking coordinate scheduler instances and prevent duplicate scheduling during concurrent job claims.</p>
@@ -106,6 +107,7 @@
         <div class="project-copy">
           <p class="eyebrow">FULL-STACK ENGINEERING · APPLIED AI</p>
           <h3>FitCore<span>AI-powered fitness platform</span></h3>
+          <p class="project-period">Jan 2026 – Apr 2026</p>
           <p>FitCore is a full-stack fitness and nutrition platform built around coaching conversations and easier food logging. People can describe food in text, use voice transcripts, or add food photos; the food-logging flow reached 91% recognition accuracy while reducing manual entry.</p>
           <p>For nutrition extraction from typed and transcribed descriptions, I fine-tuned a lightweight model with LoRA/SFT. Compared with a large-model baseline, it reduced inference cost by 75% and latency from 600 ms to under 150 ms, while keeping extraction accuracy within one percentage point of the baseline.</p>
           <p>The coaching experience uses hybrid retrieval: BM25 and vector search are combined with RRF fusion, then a cross-encoder reranks the results. When a question is ambiguous, the system uses conversation context to rewrite it, adjusts the retrieval top-k to the question complexity and corpus size, and selects evidence for source-cited answers.</p>
@@ -124,11 +126,11 @@
           <div class="pipeline">
             <div><span>01</span><p>User question<small>Fitness &amp; nutrition context</small></p></div>
             <span class="connector" aria-hidden="true">↓</span>
-            <div><span>02</span><p>Hybrid search<small>Vector similarity + BM25</small></p></div>
+            <div><span>02</span><p>Hybrid retrieval<small>Vector search + BM25</small></p></div>
             <span class="connector" aria-hidden="true">↓</span>
-            <div><span>03</span><p>Rerank &amp; filter<small>Confidence-based context selection</small></p></div>
+            <div><span>03</span><p>RRF &amp; reranking<small>Cross-encoder ranks evidence</small></p></div>
             <span class="connector" aria-hidden="true">↓</span>
-            <div class="last"><span>04</span><p>Stream a response<small>Server-Sent Events</small></p></div>
+            <div class="last"><span>04</span><p>Answer with evidence<small>Source-cited response</small></p></div>
           </div>
           <p class="caption">From question to contextual response.</p>
         </aside>
