@@ -35,3 +35,10 @@
   flex-wrap: wrap;
   align-items: center;
 }
+
+
+.project-period {
+  font-size: 12px !important;
+  color: var(--muted);
+  margin: -10px 0 14px;
+}
