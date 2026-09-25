@@ -1,11 +1,183 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Hongbo (Herbert) Yu — Rice CS master's student. Backend engineering, agent infrastructure, and applied AI. Seeking U.S. internships."><meta name="theme-color" content="#fafaf8"><meta property="og:title" content="Hongbo Yu | Software & AI Engineer"><meta property="og:description" content="Rice CS master's student. Experience at Autoagents and Aqumon. Building FitCore."><link rel="canonical" href="https://g1lollipop.github.io/"><title>Hongbo Yu | Software & AI Engineer</title><link rel="stylesheet" href="./styles.css"></head>
-<body><a class="skip" href="#main">Skip to content</a>
-<header class="wrap"><a class="brand" href="#home" aria-label="Hongbo Yu, home">HY<span>.</span></a><nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#about">About</a><a class="nav-contact" href="mailto:hy75@rice.edu">Get in touch ↗</a></nav></header>
-<main class="wrap" id="main"><section class="hero" id="home" aria-labelledby="title"><p class="availability"><span aria-hidden="true"></span>Seeking U.S. SWE &amp; AI engineering internships</p><h1 id="title">Hongbo Yu<span>You can call me Herbert.</span></h1><p class="role">Software engineer. Applied AI builder.</p><p class="intro">I’m a computer science master’s student at <strong>Rice University</strong>. I build backend systems and AI applications, with internship experience in agent infrastructure and financial technology.</p><div class="actions"><a class="button primary" href="./assets/Hongbo_Yu_SWE.pdf" target="_blank" rel="noopener">SWE resume ↗</a><a class="button" href="./assets/Hongbo_Yu_AI_Engineer.pdf" target="_blank" rel="noopener">AI engineer resume ↗</a></div><div class="meta"><span>Houston, TX</span><span>Graduating December 2027</span><a href="https://github.com/G1lollipop">GitHub ↗</a><a href="https://www.linkedin.com/in/herbert-yu-rice/">LinkedIn ↗</a></div></section>
-<section id="experience" class="section" aria-labelledby="experience-title"><div class="heading"><h2 id="experience-title">Experience</h2><span>01 / WHERE I’VE WORKED</span></div>
-<article class="job"><div class="job-meta"><h3>Autoagents</h3><p>Beijing, China</p><span>Mar – Jul 2026</span></div><div><h4>Agent Development Intern</h4><p class="summary">Built infrastructure for stateful, recoverable AI agents.</p><ul><li>Reworked linear workflows into LangGraph state machines with Redis checkpoints so asynchronous sessions could pause and resume.</li><li>Added structured-output validation, retries, and self-correction to recover from malformed model responses.</li><li>Built trace-based evaluations and regression checks; deployed services with Kubernetes, Helm, and autoscaling.</li></ul><div class="tags"><span>Python</span><span>LangGraph</span><span>Redis</span><span>Kubernetes</span></div></div></article>
-<article class="job"><div class="job-meta"><h3>Aqumon</h3><p>Shenzhen, China</p><span>Mar – Jul 2025</span></div><div><h4>Backend Development Intern</h4><p class="summary">Worked on authentication, payments, and API performance.</p><ul><li>Designed JWT + Redis authentication for multi-tenant APIs, with gateway validation and access / refresh tokens.</li><li>Integrated Stripe and RocketMQ for asynchronous payments, using idempotency keys and database constraints to prevent duplicate transactions.</li><li>Optimized MySQL queries and indexes, reducing core API p99 latency from <strong>500 ms to under 200 ms</strong>.</li></ul><div class="tags"><span>MySQL</span><span>Redis</span><span>RocketMQ</span><span>Stripe</span></div></div></article></section>
-<section id="projects" class="section" aria-labelledby="projects-title"><div class="heading"><h2 id="projects-title">Selected project</h2><span>02 / WHAT I’M BUILDING</span></div><article class="project"><div class="project-copy"><p class="eyebrow">FULL-STACK ENGINEERING · APPLIED AI</p><h3>FitCore<span>AI-powered fitness platform</span></h3><p>A full-stack application that brings together fitness and nutrition chat, contextual retrieval, and structured food logging.</p><ul><li>Hybrid retrieval combines vector search, BM25, and reranking to ground fitness and nutrition responses.</li><li>Streaming chat delivers the first token in under a second.</li><li>A LoRA-tuned model converts food descriptions into structured nutrition data.</li></ul><div class="tags"><span>Next.js</span><span>FastAPI</span><span>Supabase</span><span>pgvector</span><span>LoRA</span></div><div class="project-links"><a href="https://fitcore-web-eight.vercel.app/" target="_blank" rel="noopener">Open app ↗</a><span class="link-note">Sign-in required</span></div></div><aside class="project-visual" aria-label="FitCore retrieval pipeline"><div class="visual-top"><b>F.</b><span>FITCORE / RETRIEVAL</span></div><div class="pipeline"><div><span>01</span><p>User question<small>Fitness &amp; nutrition context</small></p></div><span class="connector" aria-hidden="true">↓</span><div><span>02</span><p>Hybrid search<small>Vector similarity + BM25</small></p></div><span class="connector" aria-hidden="true">↓</span><div><span>03</span><p>Rerank &amp; filter<small>Confidence-based context selection</small></p></div><span class="connector" aria-hidden="true">↓</span><div class="last"><span>04</span><p>Stream a response<small>Server-Sent Events</small></p></div></div><p class="caption">From question to contextual response.</p></aside></article></section>
-<section id="about" class="section about" aria-labelledby="about-title"><div><p class="eyebrow">03 / BACKGROUND</p><h2 id="about-title">Education &amp; toolkit</h2><p class="about-copy">My work spans backend development and applied AI—from payment processing to agent orchestration and retrieval systems.</p></div><div><div class="education"><h3>Rice University</h3><p>Master of Computer Science</p><span>Aug 2026 – Dec 2027 · Expected</span></div><div class="education"><h3>Shenzhen University</h3><p>B.E. in Computer Science and Technology</p><span>Sep 2021 – Jul 2025</span></div><dl class="skills"><div><dt>Languages</dt><dd>Python, Java, TypeScript, Go, C++, SQL</dd></div><div><dt>Backend &amp; data</dt><dd>FastAPI, Spring Boot, MySQL, Redis, RocketMQ</dd></div><div><dt>AI &amp; infrastructure</dt><dd>LangGraph, PyTorch, RAG, Docker, Kubernetes</dd></div></dl></div></section>
-<section class="contact" aria-labelledby="contact-title"><div><p class="eyebrow">LET’S CONNECT</p><h2 id="contact-title">Have an opportunity in mind?</h2><p>I’m looking for software engineering and AI engineering internships in the U.S.</p></div><a href="mailto:hy75@rice.edu">hy75@rice.edu ↗</a></section></main><footer class="wrap"><span>© 2026 Hongbo Yu</span><div><a href="https://github.com/G1lollipop">GitHub</a><a href="https://www.linkedin.com/in/herbert-yu-rice/">LinkedIn</a><a href="#home">Back to top ↑</a></div></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hongbo (Herbert) Yu is a Rice computer science master's student building reliable backend systems and applied AI products.">
+  <meta name="theme-color" content="#fafaf8">
+  <meta property="og:title" content="Hongbo Yu | Software &amp; AI Engineer">
+  <meta property="og:description" content="Backend engineering, agent infrastructure, distributed systems, and applied AI.">
+  <link rel="canonical" href="https://g1lollipop.github.io/">
+  <title>Hongbo Yu | Software &amp; AI Engineer</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap">
+    <a class="brand" href="#home" aria-label="Hongbo Yu, home">HY<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a class="nav-contact" href="mailto:hy75@rice.edu">Get in touch ↗</a>
+    </nav>
+  </header>
+
+  <main class="wrap" id="main">
+    <section class="hero" id="home" aria-labelledby="title">
+      <p class="availability"><span aria-hidden="true"></span>Seeking U.S. SWE &amp; AI engineering internships</p>
+      <h1 id="title">Hongbo Yu<span>You can call me Herbert.</span></h1>
+      <p class="role">Software engineer. Applied AI builder.</p>
+      <p class="intro">I’m a computer science master’s student at <strong>Rice University</strong>, based in Houston. I build backend systems and AI applications, with experience in agent infrastructure, distributed services, and retrieval-powered products.</p>
+      <p class="intro">I’m especially interested in making complex software dependable in practice: workflows that recover cleanly, APIs that stay responsive under load, and AI features that use the right context to help people.</p>
+      <div class="meta">
+        <span>Houston, TX</span>
+        <span>Graduating December 2027</span>
+        <a href="https://github.com/G1lollipop">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/herbert-yu-rice/">LinkedIn ↗</a>
+      </div>
+    </section>
+
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <div class="heading">
+        <h2 id="experience-title">Experience</h2>
+        <span>01 / WHERE I’VE WORKED</span>
+      </div>
+
+      <article class="job">
+        <div class="job-meta">
+          <h3>Autoagents</h3>
+          <p>Beijing, China</p>
+          <span>Mar – Jul 2026</span>
+        </div>
+        <div class="job-copy">
+          <h4>Agent Development Intern</h4>
+          <p>At Autoagents, I rebuilt linear ticket processing as a LangGraph state machine so agent workflows could support additional services and involve a human operator when a ticket needed intervention. I persisted session state in Redis and built a staff-triggered recovery interface, allowing work to pause for input and resume at the interrupted node.</p>
+          <p>For tool calls and model outputs, I added retries and Pydantic validation to handle failed calls and malformed responses. On a golden dataset, the structured-output validation pass rate rose from 89% to 98%. I also restricted tool access by workflow node so each step could use only the tools it needed.</p>
+          <p>I integrated LangSmith tracing and golden-dataset evaluation into workflow development. These gave us a repeatable way to inspect agent execution, pinpoint failing steps, and target quality improvements.</p>
+          <div class="tags">
+            <span>Python</span><span>LangGraph</span><span>LangSmith</span><span>Redis</span><span>Pydantic</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-meta">
+          <h3>Aqumon</h3>
+          <p>Shenzhen, China</p>
+          <span>Mar – Jul 2025</span>
+        </div>
+        <div class="job-copy">
+          <h4>Backend Development Intern</h4>
+          <p>I worked on payment processing by separating Stripe webhook ingestion from downstream business processing. Events were persisted and sent through RocketMQ, so webhook responses did not have to wait for every downstream task. Redis idempotency keys, database uniqueness constraints, and order-state checks helped prevent duplicate permission and user-identity updates.</p>
+          <p>I also built JWT access- and refresh-token authentication with Redis-backed session tracking. Refresh-token rotation and device-ID binding worked with single-session enforcement to limit account sharing across devices.</p>
+          <p>To improve database performance, I analyzed execution plans, added composite indexes, and removed redundant reads. In benchmark tests, these changes reduced endpoint p95 latency from 240 ms to 95 ms and cut rows scanned by 80%.</p>
+          <p>I implemented leaky-bucket API rate limiting to cap downstream traffic at 200 requests per second. Stress tests sustained 1,000 incoming requests per second while keeping p95 latency for admitted requests below 300 ms.</p>
+          <div class="tags">
+            <span>Java</span><span>Spring Boot</span><span>MySQL</span><span>Redis</span><span>RocketMQ</span><span>JWT</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="heading">
+        <h2 id="projects-title">Selected projects</h2>
+        <span>02 / WHAT I’VE BUILT</span>
+      </div>
+
+      <article class="project project-text">
+        <div class="project-copy">
+          <p class="eyebrow">DISTRIBUTED SYSTEMS · RELIABILITY</p>
+          <h3>Atlas<span>Distributed job scheduler</span></h3>
+          <p>Atlas is a distributed job scheduler I’m building in Go with PostgreSQL and Redis. I designed it to keep work moving when workers fail and to coordinate job claims across multiple scheduler instances.</p>
+          <p>I tested lease-based recovery by running 1,000 tasks across 10 workers and forcibly terminating one worker. Heartbeat-based failure detection reassigned its in-flight tasks within 10 seconds, validating that unfinished work could recover without manual intervention.</p>
+          <p>For delivery and failure handling, Atlas supports at-least-once task delivery, configurable retries with exponential backoff for transient errors, and dead-letter queues for tasks that cannot complete. Leader election and database locking coordinate scheduler instances and prevent duplicate scheduling during concurrent job claims.</p>
+          <div class="tags">
+            <span>Go</span><span>PostgreSQL</span><span>Redis</span><span>Kubernetes</span><span>Prometheus</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/G1lollipop/atlas" target="_blank" rel="noopener">View source on GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-copy">
+          <p class="eyebrow">FULL-STACK ENGINEERING · APPLIED AI</p>
+          <h3>FitCore<span>AI-powered fitness platform</span></h3>
+          <p>FitCore is a full-stack fitness and nutrition platform built around coaching conversations and easier food logging. People can describe food in text, use voice transcripts, or add food photos; the food-logging flow reached 91% recognition accuracy while reducing manual entry.</p>
+          <p>For nutrition extraction from typed and transcribed descriptions, I fine-tuned a lightweight model with LoRA/SFT. Compared with a large-model baseline, it reduced inference cost by 75% and latency from 600 ms to under 150 ms, while keeping extraction accuracy within one percentage point of the baseline.</p>
+          <p>The coaching experience uses hybrid retrieval: BM25 and vector search are combined with RRF fusion, then a cross-encoder reranks the results. When a question is ambiguous, the system uses conversation context to rewrite it, adjusts the retrieval top-k to the question complexity and corpus size, and selects evidence for source-cited answers.</p>
+          <p>To personalize conversations across sessions, I added token-budgeted context and rolling summaries, and stored fitness goals and dietary preferences in user profiles. This lets coaching use relevant history without resending full chat transcripts.</p>
+          <div class="tags">
+            <span>Next.js</span><span>FastAPI</span><span>Supabase</span><span>pgvector</span><span>LoRA/SFT</span><span>RAG</span>
+          </div>
+          <div class="project-links">
+            <a href="https://fitcore-web-eight.vercel.app/" target="_blank" rel="noopener">Open live demo ↗</a>
+            <span class="link-note">Sign-in required</span>
+            <a href="https://github.com/G1lollipop/fitcore" target="_blank" rel="noopener">View source on GitHub ↗</a>
+          </div>
+        </div>
+        <aside class="project-visual" aria-label="FitCore retrieval pipeline">
+          <div class="visual-top"><b>F.</b><span>FITCORE / RETRIEVAL</span></div>
+          <div class="pipeline">
+            <div><span>01</span><p>User question<small>Fitness &amp; nutrition context</small></p></div>
+            <span class="connector" aria-hidden="true">↓</span>
+            <div><span>02</span><p>Hybrid search<small>Vector similarity + BM25</small></p></div>
+            <span class="connector" aria-hidden="true">↓</span>
+            <div><span>03</span><p>Rerank &amp; filter<small>Confidence-based context selection</small></p></div>
+            <span class="connector" aria-hidden="true">↓</span>
+            <div class="last"><span>04</span><p>Stream a response<small>Server-Sent Events</small></p></div>
+          </div>
+          <p class="caption">From question to contextual response.</p>
+        </aside>
+      </article>
+    </section>
+
+    <section id="about" class="section about" aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">03 / BACKGROUND</p>
+        <h2 id="about-title">Education &amp; toolkit</h2>
+        <p class="about-copy">My work spans backend engineering and applied AI, from payment and identity systems to resilient agents, distributed scheduling, and retrieval for personalized fitness coaching.</p>
+      </div>
+      <div>
+        <div class="education">
+          <h3>Rice University</h3>
+          <p>Master of Computer Science</p>
+          <span>Aug 2026 – Dec 2027 · Expected</span>
+        </div>
+        <div class="education">
+          <h3>Shenzhen University</h3>
+          <p>B.E. in Computer Science and Technology</p>
+          <span>Sep 2021 – Jul 2025</span>
+        </div>
+        <dl class="skills">
+          <div><dt>Languages</dt><dd>Java, Python, Go, C++, SQL, TypeScript</dd></div>
+          <div><dt>Frameworks</dt><dd>Spring Boot, FastAPI, Gin, React, Next.js</dd></div>
+          <div><dt>Data &amp; infrastructure</dt><dd>PostgreSQL, MySQL, Redis, RocketMQ, Docker, Kubernetes, Helm, Prometheus, Linux, Git</dd></div>
+          <div><dt>AI &amp; retrieval</dt><dd>PyTorch, LangGraph, LangSmith, RAG, LoRA/SFT, Supabase, pgvector, Elasticsearch</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="contact" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">LET’S CONNECT</p>
+        <h2 id="contact-title">Have an opportunity in mind?</h2>
+        <p>I’m looking for software engineering and AI engineering internships in the U.S.</p>
+      </div>
+      <a href="mailto:hy75@rice.edu">hy75@rice.edu ↗</a>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© 2026 Hongbo Yu</span>
+    <div>
+      <a href="https://github.com/G1lollipop">GitHub</a>
+      <a href="https://www.linkedin.com/in/herbert-yu-rice/">LinkedIn</a>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
