@@ -4,3 +4,34 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{body{background:white}.wrap{width:100%}header,.availability,.actions,.meta,.project-visual,.contact,footer,.skip{display:none}.hero{padding:0 0 18px}h1{font-size:32px}h1>span{font-size:13px}.role{font-size:17px}.intro{font-size:12px}.section{padding:18px 0}.heading{margin-bottom:15px}.job{grid-template-columns:150px 1fr;gap:20px}.project{display:block}.project-copy{padding:18px}.job,.project,.education{break-inside:avoid}.about{gap:30px}.tags span{border:1px solid #ddd}.project-links{display:none}}
 .link-note{font-weight:400;color:var(--muted)}
+
+
+/* Longer editorial descriptions */
+.job-copy > p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 13px;
+}
+
+.project-copy > p:not(.eyebrow) {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.project + .project {
+  margin-top: 22px;
+}
+
+.project-text {
+  grid-template-columns: 1fr;
+}
+
+.project-text .project-copy > p:not(.eyebrow) {
+  max-width: 920px;
+}
+
+.project-links {
+  flex-wrap: wrap;
+  align-items: center;
+}
