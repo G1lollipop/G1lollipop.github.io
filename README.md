@@ -1,25 +1,23 @@
 # Hongbo Yu — Engineering Portfolio
 
-Recruiting-focused personal website for SWE and AI engineering internships.
+A personal website introducing my software engineering and applied AI work. It brings my experience, projects, education, and contact information together in one place for internship applications.
 
-## Maintain
+**Live site:** [g1lollipop.github.io](https://g1lollipop.github.io/)
 
-- `index.html`: identity, experience, project, education, and contact links.
-- `styles.css`: responsive layout, colors, keyboard focus, and print styles.
-- `assets/Hongbo_Yu_SWE.pdf`: software engineering resume.
-- `assets/Hongbo_Yu_AI_Engineer.pdf`: AI engineering resume.
+## Explore the site
 
-The homepage uses plain HTML and CSS. All links work without JavaScript; the legacy `profile.js` and `script.js` files are no longer loaded. Edit contact details directly in `index.html`.
+- **Experience:** agent development at Autoagents and backend engineering at Aqumon.
+- **Projects:** summaries of distributed systems and applied AI work, with links to source code or a live demo where available.
+- **Background:** education, technical toolkit, and ways to get in touch.
 
-Content was adapted from the two supplied resumes. Performance figures are resume claims, not independently benchmarked results. FitCore is the selected personal project; Autoagents and Aqumon are presented as internships.
+The site presents these details directly on the page, so visitors can read them without downloading a resume.
 
-## Preview
+## How it is built
 
-Open `index.html` directly, or run `python -m http.server 8765` in this folder and visit http://localhost:8765.
+The homepage uses plain HTML and CSS. `index.html` contains the page content, and `styles.css` handles the responsive layout, keyboard focus styles, and print styles. No JavaScript or build step is required.
 
-## Publish
+To preview changes locally, open `index.html` in a browser or run `python -m http.server 8765` from the repository root and visit `http://localhost:8765`.
 
-Existing GitHub Pages destination: https://g1lollipop.github.io/
-Existing publishing branch: `master`, repository root. Review changes and resume PDFs before pushing to `master`.
+## Publishing
 
-The older blog files remain in place to preserve existing URLs. No analytics, third-party scripts, external fonts, or build dependencies are required.
+GitHub Pages serves the repository root on the `master` branch at [g1lollipop.github.io](https://g1lollipop.github.io/). Update `index.html` for content changes and `styles.css` for layout changes.
