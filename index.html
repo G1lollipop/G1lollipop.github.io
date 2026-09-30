@@ -88,17 +88,21 @@
 
       <article class="project project-text">
         <div class="project-copy">
-          <p class="eyebrow">DISTRIBUTED SYSTEMS · RELIABILITY</p>
-          <h3>Atlas<span>Distributed job scheduler</span></h3>
+          <p class="eyebrow">DISTRIBUTED SYSTEMS · AI INFRASTRUCTURE</p>
+          <h3>Atlas<span>Resource-aware scheduling for CPU/GPU workloads</span></h3>
           <p class="project-period">Sep 2026 – Present</p>
-          <p>Atlas is a distributed job scheduler I’m building in Go with PostgreSQL and Redis. I designed it to keep work moving when workers fail and to coordinate job claims across multiple scheduler instances.</p>
-          <p>I tested lease-based recovery by running 1,000 tasks across 10 workers and forcibly terminating one worker. Heartbeat-based failure detection reassigned its in-flight tasks within 10 seconds, validating that unfinished work could recover without manual intervention.</p>
-          <p>For delivery and failure handling, Atlas supports at-least-once task delivery, configurable retries with exponential backoff for transient errors, and dead-letter queues for tasks that cannot complete. Leader election and database locking coordinate scheduler instances and prevent duplicate scheduling during concurrent job claims.</p>
+          <p>Atlas is a distributed resource-aware job scheduler I’m developing in Go for heterogeneous AI workloads. I added worker capability registration, CPU/RAM/GPU requirements, and explicit scheduler assignment: the scheduler selects a compatible worker and reserves resources transactionally before that worker claims the run. Bounded worker pools execute concurrent jobs, while FirstFit, LeastLoaded, BestFit, and PriorityAware policies make placement trade-offs testable.</p>
+          <p>Execution uses renewable leases, separate worker heartbeats, and graceful shutdown. Atlas provides at-least-once delivery with stable execution keys for idempotent side effects, retries with capped jitter, cancellation, and operational dead-letter APIs. I verified coordination with 32-worker database tests and seven process-failure scenarios covering worker crashes after a committed side effect, leader termination, lease loss, timeouts, dependency connection failures, and SIGTERM draining.</p>
+          <p>I persisted trace context so a job can be followed from HTTP submission through scheduling, worker execution, and result storage. Queue, reservation, and failure metrics support fleet monitoring. Kubernetes configurations separate CPU and GPU worker pools and include optional queue-depth scaling through KEDA; these manifests are statically validated, with live cluster and real GPU execution still to be tested.</p>
+          <p>A local benchmark matrix completed all 9,000 jobs across 30 trials using simulated 50 ms handlers. Median whole-batch throughput rose from 25.0 jobs/s with one worker to 88.6 with eight and 97.2 with sixteen. The 9.8% gain from doubling eight workers to sixteen exposed diminishing returns; I investigated polling and database coordination costs and compared FirstFit with BestFit on a 70% CPU / 20% small-GPU / 10% large-GPU workload. The published reports retain raw data, failure assertions, and the limits of these local simulations.</p>
           <div class="tags">
-            <span>Go</span><span>PostgreSQL</span><span>Redis</span><span>Kubernetes</span><span>Prometheus</span>
+            <span>Go</span><span>PostgreSQL</span><span>Resource-aware scheduling</span><span>OpenTelemetry</span><span>Kubernetes</span>
           </div>
           <div class="project-links">
             <a href="https://github.com/G1lollipop/atlas" target="_blank" rel="noopener">View source on GitHub ↗</a>
+            <a href="https://github.com/G1lollipop/atlas/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener">Architecture &amp; design ↗</a>
+            <a href="https://github.com/G1lollipop/atlas/blob/main/docs/BENCHMARKS.md" target="_blank" rel="noopener">Benchmarks &amp; raw data ↗</a>
+            <a href="https://github.com/G1lollipop/atlas/blob/main/docs/CHAOS.md" target="_blank" rel="noopener">Crash recovery evidence ↗</a>
           </div>
         </div>
       </article>
