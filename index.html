@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Hongbo (Herbert) Yu is a Rice computer science master's student building reliable backend systems and applied AI products.">
-  <meta name="theme-color" content="#fafaf8">
+  <meta name="theme-color" content="#f6f5ef">
   <meta property="og:title" content="Hongbo Yu | Software &amp; AI Engineer">
   <meta property="og:description" content="Backend engineering, agent infrastructure, distributed systems, and applied AI.">
   <link rel="canonical" href="https://g1lollipop.github.io/">
@@ -16,32 +16,148 @@
   <header class="wrap">
     <a class="brand" href="#home" aria-label="Hongbo Yu, home">HY<span>.</span></a>
     <nav aria-label="Main navigation">
-      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
       <a href="#about">About</a>
-      <a class="nav-contact" href="mailto:hy75@rice.edu">Get in touch ↗</a>
+      <a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
   <main class="wrap" id="main">
     <section class="hero" id="home" aria-labelledby="title">
-      <p class="availability"><span aria-hidden="true"></span>Seeking U.S. SWE &amp; AI engineering internships</p>
-      <h1 id="title">Hongbo Yu<span>You can call me Herbert.</span></h1>
-      <p class="role">Software engineer. Applied AI builder.</p>
-      <p class="intro">I’m a computer science master’s student at <strong>Rice University</strong>, based in Houston. I build backend systems and AI applications, with experience in agent infrastructure, distributed services, and retrieval-powered products.</p>
-      <p class="intro">I’m especially interested in making complex software dependable in practice: workflows that recover cleanly, APIs that stay responsive under load, and AI features that use the right context to help people.</p>
-      <div class="meta">
-        <span>Houston, TX</span>
-        <span>Graduating December 2027</span>
-        <a href="https://github.com/G1lollipop">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/herbert-yu-rice/">LinkedIn ↗</a>
+      <div class="hero-copy">
+        <p class="availability"><span aria-hidden="true"></span>Seeking U.S. SWE &amp; AI engineering internships</p>
+        <p class="hero-kicker">SOFTWARE ENGINEER &nbsp;/&nbsp; APPLIED AI</p>
+        <h1 id="title">Hongbo Yu<span>Hi, I’m Herbert.</span></h1>
+        <p class="role">Building dependable systems for <em>useful AI.</em></p>
+        <p class="intro">I’m a computer science master’s student at <strong>Rice University</strong>, based in Houston. I build backend systems and AI applications, with experience in agent infrastructure, distributed services, and retrieval-powered products.</p>
+        <p class="intro">I’m especially interested in making complex software dependable in practice: workflows that recover cleanly, APIs that stay responsive under load, and AI features that use the right context to help people.</p>
+        <div class="actions">
+          <a class="button primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+          <a class="button secondary" href="mailto:hy75@rice.edu">Get in touch <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="meta">
+          <span>Houston, TX</span>
+          <span>Graduating December 2027</span>
+          <a href="https://github.com/G1lollipop">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/herbert-yu-rice/">LinkedIn ↗</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Featured projects">
+        <div class="panel-header"><span>SELECTED WORK</span><span>01 — 02</span></div>
+        <div class="panel-orbit" aria-hidden="true">
+          <div class="orbit-ring orbit-ring-one"></div>
+          <div class="orbit-ring orbit-ring-two"></div>
+          <div class="orbit-core">HY<span>.</span></div>
+          <span class="orbit-dot dot-one"></span><span class="orbit-dot dot-two"></span><span class="orbit-dot dot-three"></span>
+          <span class="orbit-label label-one">SYSTEMS</span><span class="orbit-label label-two">INTELLIGENCE</span>
+        </div>
+        <a class="panel-project" href="#atlas"><span class="panel-number">01</span><span><strong>Atlas</strong><small>Resource-aware job scheduling</small></span><span class="panel-arrow" aria-hidden="true">↗</span></a>
+        <a class="panel-project" href="#fitcore"><span class="panel-number">02</span><span><strong>FitCore</strong><small>AI-powered fitness and nutrition</small></span><span class="panel-arrow" aria-hidden="true">↗</span></a>
+        <p class="panel-footer">DESIGNED FOR THE REAL WORLD</p>
+      </aside>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="heading">
+        <h2 id="projects-title">Selected projects</h2>
+        <span>01 / WHAT I’VE BUILT</span>
+      </div>
+
+      <article class="project project-text" id="atlas">
+        <div class="project-copy">
+          <p class="eyebrow">DISTRIBUTED SYSTEMS · AI INFRASTRUCTURE</p>
+          <h3>Atlas<span>Resource-aware scheduling for CPU/GPU workloads</span></h3>
+          <p class="project-period">Sep 2026 – Present</p>
+          <p>Atlas is a distributed resource-aware job scheduler I’m developing in Go for heterogeneous AI workloads, building on a <a href="https://github.com/G1lollipop/atlas/blob/main/docs/PROVENANCE.md">Taskflow snapshot</a>. I added worker capability registration, CPU/RAM/GPU requirements, and explicit scheduler assignment: the scheduler selects a compatible worker and reserves resources transactionally before that worker claims the run. Bounded worker pools execute concurrent jobs, while FirstFit, LeastLoaded, BestFit, and PriorityAware policies make placement trade-offs testable.</p>
+          <p>Execution uses renewable leases, separate worker heartbeats, and graceful shutdown. Atlas provides at-least-once delivery with stable execution keys for idempotent side effects, retries with capped jitter, cancellation, and operational dead-letter APIs. I verified coordination with 32-worker database tests and seven process-failure scenarios covering worker crashes after a committed side effect, leader termination, lease loss, timeouts, dependency connection failures, and SIGTERM draining.</p>
+          <p>I persisted trace context so a job can be followed from HTTP submission through scheduling, worker execution, and result storage. Queue, reservation, and failure metrics support fleet monitoring. Kubernetes configurations separate CPU and GPU worker pools and include optional queue-depth scaling through KEDA; these manifests are statically validated, with live cluster and real GPU execution still to be tested.</p>
+          <p>A local benchmark matrix completed all 9,000 jobs across 30 trials using simulated 50 ms handlers. Median whole-batch throughput rose from 25.0 jobs/s with one worker to 88.6 with eight and 97.2 with sixteen. The 9.8% gain from doubling eight workers to sixteen exposed diminishing returns; I investigated polling and database coordination costs and compared FirstFit with BestFit on a 70% CPU / 20% small-GPU / 10% large-GPU workload. The published reports retain raw data, failure assertions, and the limits of these local simulations.</p>
+          <div class="tags">
+            <span>Go</span><span>PostgreSQL</span><span>Resource-aware scheduling</span><span>OpenTelemetry</span><span>Kubernetes</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/G1lollipop/atlas" target="_blank" rel="noopener">View source on GitHub ↗</a>
+            <a href="https://github.com/G1lollipop/atlas/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener">Architecture &amp; design ↗</a>
+            <a href="https://github.com/G1lollipop/atlas/blob/main/docs/BENCHMARKS.md" target="_blank" rel="noopener">Benchmarks &amp; raw data ↗</a>
+            <a href="https://github.com/G1lollipop/atlas/blob/main/docs/CHAOS.md" target="_blank" rel="noopener">Crash recovery evidence ↗</a>
+          </div>
+        </div>
+        <aside class="project-visual atlas-visual" aria-label="Atlas job lifecycle">
+          <div class="visual-top"><b>A.</b><span>ATLAS / JOB LIFECYCLE</span></div>
+          <div class="pipeline">
+            <div><span>01</span><p>Submit a job<small>HTTP API and job store</small></p></div>
+            <span class="connector" aria-hidden="true">↓</span>
+            <div><span>02</span><p>Match resources<small>CPU, memory and GPU requirements</small></p></div>
+            <span class="connector" aria-hidden="true">↓</span>
+            <div><span>03</span><p>Reserve and assign<small>Transactional worker placement</small></p></div>
+            <span class="connector" aria-hidden="true">↓</span>
+            <div class="last"><span>04</span><p>Execute and recover<small>Leases, retries and tracing</small></p></div>
+          </div>
+          <p class="caption">From submission to resilient execution.</p>
+        </aside>
+      </article>
+
+      <article class="project" id="fitcore">
+        <div class="project-copy">
+          <p class="eyebrow">FULL-STACK ENGINEERING · APPLIED AI</p>
+          <h3>FitCore<span>AI-powered fitness platform</span></h3>
+          <p class="project-period">Jan 2026 – Apr 2026</p>
+          <p>FitCore is a full-stack fitness and nutrition platform built around coaching conversations and easier food logging. People can describe food in text, use voice transcripts, or add food photos; the food-logging flow reached 91% recognition accuracy while reducing manual entry.</p>
+          <p>For nutrition extraction from typed and transcribed descriptions, I fine-tuned a lightweight model with LoRA/SFT. Compared with a large-model baseline, it reduced inference cost by 75% and latency from 600 ms to under 150 ms, while keeping extraction accuracy within one percentage point of the baseline.</p>
+          <p>The coaching experience uses hybrid retrieval: BM25 and vector search are combined with RRF fusion, then a cross-encoder reranks the results. When a question is ambiguous, the system uses conversation context to rewrite it, adjusts the retrieval top-k to the question complexity and corpus size, and selects evidence for source-cited answers.</p>
+          <p>To personalize conversations across sessions, I added token-budgeted context and rolling summaries, and stored fitness goals and dietary preferences in user profiles. This lets coaching use relevant history without resending full chat transcripts.</p>
+          <div class="tags">
+            <span>Next.js</span><span>FastAPI</span><span>Supabase</span><span>pgvector</span><span>LoRA/SFT</span><span>RAG</span>
+          </div>
+          <div class="project-links">
+            <a href="https://fitcore-web-eight.vercel.app/" target="_blank" rel="noopener">Open live demo ↗</a>
+            <span class="link-note">Sign-in required</span>
+            <a href="https://github.com/G1lollipop/fitcore" target="_blank" rel="noopener">View source on GitHub ↗</a>
+          </div>
+        </div>
+        <aside class="project-visual" aria-label="FitCore retrieval pipeline">
+          <div class="visual-top"><b>F.</b><span>FITCORE / RETRIEVAL</span></div>
+          <div class="pipeline">
+            <div><span>01</span><p>User question<small>Fitness &amp; nutrition context</small></p></div>
+            <span class="connector" aria-hidden="true">↓</span>
+            <div><span>02</span><p>Hybrid retrieval<small>Vector search + BM25</small></p></div>
+            <span class="connector" aria-hidden="true">↓</span>
+            <div><span>03</span><p>RRF &amp; reranking<small>Cross-encoder ranks evidence</small></p></div>
+            <span class="connector" aria-hidden="true">↓</span>
+            <div class="last"><span>04</span><p>Answer with evidence<small>Source-cited response</small></p></div>
+          </div>
+          <p class="caption">From question to contextual response.</p>
+        </aside>
+      </article>
+    </section>
+
+    <section id="open-source" class="section" aria-labelledby="open-source-title">
+      <div class="heading">
+        <h2 id="open-source-title">Open source</h2>
+        <span>02 / CONTRIBUTING BACK</span>
+      </div>
+      <p class="section-intro">I enjoy making the tools behind AI applications a little more reliable. Here are two fixes I’ve proposed, each with regression coverage.</p>
+      <div class="contribution-grid">
+        <a class="contribution" href="https://github.com/BerriAI/litellm/pull/47053">
+          <span class="contribution-top"><span>LiteLLM</span><span>01 ↗</span></span>
+          <h3>Clearer permission errors</h3>
+          <p>Proposed an actionable 403 response for Enterprise permission rejections in the proxy API.</p>
+          <span class="contribution-link">View pull request</span>
+        </a>
+        <a class="contribution" href="https://github.com/confident-ai/deepeval/pull/3478">
+          <span class="contribution-top"><span>DeepEval</span><span>02 ↗</span></span>
+          <h3>Preserving voice data</h3>
+          <p>Proposed preserving audio and voice metadata when exporting conversational datasets.</p>
+          <span class="contribution-link">View pull request</span>
+        </a>
       </div>
     </section>
 
     <section id="experience" class="section" aria-labelledby="experience-title">
       <div class="heading">
         <h2 id="experience-title">Experience</h2>
-        <span>01 / WHERE I’VE WORKED</span>
+        <span>03 / WHERE I’VE WORKED</span>
       </div>
 
       <article class="job">
@@ -80,70 +196,9 @@
       </article>
     </section>
 
-    <section id="projects" class="section" aria-labelledby="projects-title">
-      <div class="heading">
-        <h2 id="projects-title">Selected projects</h2>
-        <span>02 / WHAT I’VE BUILT</span>
-      </div>
-
-      <article class="project project-text">
-        <div class="project-copy">
-          <p class="eyebrow">DISTRIBUTED SYSTEMS · AI INFRASTRUCTURE</p>
-          <h3>Atlas<span>Resource-aware scheduling for CPU/GPU workloads</span></h3>
-          <p class="project-period">Sep 2026 – Present</p>
-          <p>Atlas is a distributed resource-aware job scheduler I’m developing in Go for heterogeneous AI workloads. I added worker capability registration, CPU/RAM/GPU requirements, and explicit scheduler assignment: the scheduler selects a compatible worker and reserves resources transactionally before that worker claims the run. Bounded worker pools execute concurrent jobs, while FirstFit, LeastLoaded, BestFit, and PriorityAware policies make placement trade-offs testable.</p>
-          <p>Execution uses renewable leases, separate worker heartbeats, and graceful shutdown. Atlas provides at-least-once delivery with stable execution keys for idempotent side effects, retries with capped jitter, cancellation, and operational dead-letter APIs. I verified coordination with 32-worker database tests and seven process-failure scenarios covering worker crashes after a committed side effect, leader termination, lease loss, timeouts, dependency connection failures, and SIGTERM draining.</p>
-          <p>I persisted trace context so a job can be followed from HTTP submission through scheduling, worker execution, and result storage. Queue, reservation, and failure metrics support fleet monitoring. Kubernetes configurations separate CPU and GPU worker pools and include optional queue-depth scaling through KEDA; these manifests are statically validated, with live cluster and real GPU execution still to be tested.</p>
-          <p>A local benchmark matrix completed all 9,000 jobs across 30 trials using simulated 50 ms handlers. Median whole-batch throughput rose from 25.0 jobs/s with one worker to 88.6 with eight and 97.2 with sixteen. The 9.8% gain from doubling eight workers to sixteen exposed diminishing returns; I investigated polling and database coordination costs and compared FirstFit with BestFit on a 70% CPU / 20% small-GPU / 10% large-GPU workload. The published reports retain raw data, failure assertions, and the limits of these local simulations.</p>
-          <div class="tags">
-            <span>Go</span><span>PostgreSQL</span><span>Resource-aware scheduling</span><span>OpenTelemetry</span><span>Kubernetes</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/G1lollipop/atlas" target="_blank" rel="noopener">View source on GitHub ↗</a>
-            <a href="https://github.com/G1lollipop/atlas/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener">Architecture &amp; design ↗</a>
-            <a href="https://github.com/G1lollipop/atlas/blob/main/docs/BENCHMARKS.md" target="_blank" rel="noopener">Benchmarks &amp; raw data ↗</a>
-            <a href="https://github.com/G1lollipop/atlas/blob/main/docs/CHAOS.md" target="_blank" rel="noopener">Crash recovery evidence ↗</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-copy">
-          <p class="eyebrow">FULL-STACK ENGINEERING · APPLIED AI</p>
-          <h3>FitCore<span>AI-powered fitness platform</span></h3>
-          <p class="project-period">Jan 2026 – Apr 2026</p>
-          <p>FitCore is a full-stack fitness and nutrition platform built around coaching conversations and easier food logging. People can describe food in text, use voice transcripts, or add food photos; the food-logging flow reached 91% recognition accuracy while reducing manual entry.</p>
-          <p>For nutrition extraction from typed and transcribed descriptions, I fine-tuned a lightweight model with LoRA/SFT. Compared with a large-model baseline, it reduced inference cost by 75% and latency from 600 ms to under 150 ms, while keeping extraction accuracy within one percentage point of the baseline.</p>
-          <p>The coaching experience uses hybrid retrieval: BM25 and vector search are combined with RRF fusion, then a cross-encoder reranks the results. When a question is ambiguous, the system uses conversation context to rewrite it, adjusts the retrieval top-k to the question complexity and corpus size, and selects evidence for source-cited answers.</p>
-          <p>To personalize conversations across sessions, I added token-budgeted context and rolling summaries, and stored fitness goals and dietary preferences in user profiles. This lets coaching use relevant history without resending full chat transcripts.</p>
-          <div class="tags">
-            <span>Next.js</span><span>FastAPI</span><span>Supabase</span><span>pgvector</span><span>LoRA/SFT</span><span>RAG</span>
-          </div>
-          <div class="project-links">
-            <a href="https://fitcore-web-eight.vercel.app/" target="_blank" rel="noopener">Open live demo ↗</a>
-            <span class="link-note">Sign-in required</span>
-            <a href="https://github.com/G1lollipop/fitcore" target="_blank" rel="noopener">View source on GitHub ↗</a>
-          </div>
-        </div>
-        <aside class="project-visual" aria-label="FitCore retrieval pipeline">
-          <div class="visual-top"><b>F.</b><span>FITCORE / RETRIEVAL</span></div>
-          <div class="pipeline">
-            <div><span>01</span><p>User question<small>Fitness &amp; nutrition context</small></p></div>
-            <span class="connector" aria-hidden="true">↓</span>
-            <div><span>02</span><p>Hybrid retrieval<small>Vector search + BM25</small></p></div>
-            <span class="connector" aria-hidden="true">↓</span>
-            <div><span>03</span><p>RRF &amp; reranking<small>Cross-encoder ranks evidence</small></p></div>
-            <span class="connector" aria-hidden="true">↓</span>
-            <div class="last"><span>04</span><p>Answer with evidence<small>Source-cited response</small></p></div>
-          </div>
-          <p class="caption">From question to contextual response.</p>
-        </aside>
-      </article>
-    </section>
-
     <section id="about" class="section about" aria-labelledby="about-title">
       <div>
-        <p class="eyebrow">03 / BACKGROUND</p>
+        <p class="eyebrow">04 / BACKGROUND</p>
         <h2 id="about-title">Education &amp; toolkit</h2>
         <p class="about-copy">My work spans backend engineering and applied AI, from payment and identity systems to resilient agents, distributed scheduling, and retrieval for personalized fitness coaching.</p>
       </div>
@@ -167,7 +222,7 @@
       </div>
     </section>
 
-    <section class="contact" aria-labelledby="contact-title">
+    <section class="contact" id="contact" aria-labelledby="contact-title">
       <div>
         <p class="eyebrow">LET’S CONNECT</p>
         <h2 id="contact-title">Have an opportunity in mind?</h2>
